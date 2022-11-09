@@ -1,11 +1,17 @@
 import React from 'react';
-import { View, Image, Text } from 'react-xnft';
+import { View, Image, Text, useNavigation } from 'react-xnft';
 import SolanaLogo from '../icons/Solana';
+import { screen } from '../../enums/screens';
 
 const Card = () => {
+  const navigator = useNavigation();
   return (
     <View
+      onClick={() => {
+        navigator.push(screen.DETAILS);
+      }}
       style={{
+        cursor: 'pointer',
         backgroundColor: 'white',
         boxShadow: '0px 3px 15px rgba(0, 0, 0, 0.04)',
         flexDirection: 'column',
@@ -13,7 +19,7 @@ const Card = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '17px',
+        padding: '18px',
         borderRadius: '4px',
       }}
     >
@@ -92,7 +98,7 @@ const Card = () => {
           style={{
             width: '100%',
             display: 'flex',
-            alignItems: 'start',
+            alignItems: 'end',
             flexDirection: 'column',
             justifyContent: 'space-between',
           }}
@@ -104,7 +110,7 @@ const Card = () => {
               color: '#7B7B7B',
             }}
           >
-            Time Remaining
+            Floor Price
           </Text>
           <View
             style={{
@@ -117,19 +123,21 @@ const Card = () => {
             <Text
               style={{
                 fontWeight: '600',
-                fontSize: '16px',
+                fontSize: '17px',
                 color: 'black',
               }}
             >
-              20h : 20m : 58s
+              6.9
             </Text>
             <View
               style={{
-                width: '100%',
-                height: '20px',
+                width: '22px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
               }}
             >
-              <SolanaLogo />
+              <SolanaLogo color='black' />
             </View>
           </View>
         </View>

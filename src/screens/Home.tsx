@@ -1,10 +1,16 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { Button, Text, useNavigation, View } from 'react-xnft';
 import { screen } from '../../enums/screens';
 import Card from '../components/Card';
 
 const Home = () => {
-  const navigation = useNavigation();
+  // const [nftssss, setNftssss] = useState();
+  // console.log('nfts - ', nfts);
+  // const navigation = useNavigation();
+
+  // useEffect(() => {}, []);
+
   return (
     <View
       style={{
@@ -15,7 +21,7 @@ const Home = () => {
       }}
     >
       <View
-        style={{ 
+        style={{
           padding: '22px',
           width: '100%',
           display: 'flex',
